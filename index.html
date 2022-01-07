@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Best Chasma Ghar</title>
+	<meta charset="utf-8">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+	<style type="text/css">
+		.carousel-item {
+			height: 100vh;
+			min-height: 450px;
+			background: no-repeat center center scroll;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			height: auto;
+			
+		}
+		@media (max-width: 576px) {
+			.carousel-item {
+				height: 100vh;
+				min-height: 250px;
+				min-width: 40%;
+				background: no-repeat center center scroll;
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;
+				height: auto;
+				margin: 0 auto;			
+			}
+		}
+				.contactus{
+				padding-left: 20px;
+				padding-right: 20px;
+				padding-top: 30px;
+				padding-bottom: 35px;
+			}
+			.section-heading{
+				font-size: 25px;
+			}
+			.lead{
+				font-size: 16px;
+			}
+			.carousel-control-prev-icon{
+				background-image: url("image/prev.png");
+			}
+			.carousel-control-next-icon {
+				background-image: url("image/next.png");
+			}
+		.navbar-custom{
+			background-color: #000000 !important;
+		}
+		.nav-item, a{
+			color: #fff;
+			font-size: 20px;
+		}
+		body{
+			/*font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol;*/
+			font-family: Segoe UI;
+			margin: 0 auto;
+		}
+		footer{
+			background-color: #000000 !important;
+			text-align: center;
+			font-family: inherit !important;
+		}
+		.footer-about{
+			vertical-align: middle;
+		}
+			hr.new{
+				border-top: 1px solid white;
+				width: 50%;
+			}
+			hr.new1{
+				border-top: 1px solid white;
+
+			}
+			.btn-facebook {
+				background: #3b579d;
+				color: #ffffff
+			}
+
+			.btn-twitter {
+				background: #2caae1;
+				color: #ffffff
+			}
+			.btn-linkedin {
+				background: #0177b5;
+				color: #ffffff
+			}
+
+			.btn-instagram {
+				background: #dc4a38;
+				color: #ffffff
+			}
+			.map-container-6{
+				overflow:hidden;
+				padding-bottom:56.25%;
+				position:relative;
+				height:0;
+			}
+			.map-container-6 iframe{
+				left:0;
+				top:0;
+				height:100%;
+				width:100%;
+				position:absolute;
+			}
+			section{
+				justify-content: center;
+				font-family: inherit;
+			}
+
+			.gallery-title
+			{
+				font-size: 36px;
+				color: #42B32F;
+				text-align: center;
+				font-weight: 500;
+				margin-bottom: 70px;
+			}
+			.gallery-title:after {
+				content: "";
+				position: absolute;
+				width: 7.5%;
+				left: 46.5%;
+				height: 45px;
+				border-bottom: 1px solid #5e5e5e;
+			}
+			.filter-button
+			{
+				font-size: 15px;
+				border: 1px solid #212529;
+				border-radius: 5px;
+				text-align: center;
+				color: #212529;
+				margin-bottom: 30px;
+
+			}
+			.filter-button:hover
+			{
+				font-size: 15px;
+				border: 1px solid #212529;
+				border-radius: 5px;
+				text-align: center;
+				color: #ffffff;
+				background-color: #212529;
+
+			}
+			.btn-default:active .filter-button:active
+			{
+				background-color: #212529;
+				color: white;
+			}
+
+			.port-image
+			{
+				width: 100%;
+			}
+
+
+			.gallery_product
+			{
+				margin-bottom: 25px;
+			}
+	
+			.img-responsive{
+				width: 100%;
+				height: auto;
+			}
+			html {
+   			 scroll-behavior: smooth !important;
+			}
+			
+		.hidden {
+			opacity:0;
+		}
+		.console-container {
+			font-family:inherit;
+			font-size:3em;
+			text-align:center;
+			height:auto;
+			width:100%;
+			display:block;
+			position:relative;
+			color:black;
+			  top:0;
+			  bottom:0;
+			  left:0;
+			  right:0
+			  margin: auto;
+			}
+			.console-underscore {
+				position:relative;
+				top:5em;
+				left:10px;
+				justify-content: center;
+			}
+		</style>
+		<script type="text/javascript">
+			$(document).ready(function(){
+
+				$(".filter-button").click(function(){
+					var value = $(this).attr('data-filter');
+
+					if(value == "all")
+					{
+            
+            $('.filter').show('1000');
+		        }
+		        else
+		        {
+		$(".filter").not('.'+value).hide('3000');
+		$('.filter').filter('.'+value).show('3000');
+
+		}
+		});
+
+				if ($(".filter-button").removeClass("active")) {
+					$(this).removeClass("active");
+				}
+				$(this).addClass("active");
+
+			});
+		</script>
+	</head>
+	<body>
+		<!--Navbar -->
+		<nav class="mb-1 navbar navbar-expand-lg navbar-dark navbar-custom">
+			<a class="navbar-brand" href="#">
+				<img src="image/logo.png" height="42" alt="logo">
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+			aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon" style="color: #111"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent-4"> 
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">HOME</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#aboutus">ABOUT US</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#product">PRODUCTS</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#gallery">GALLERY</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#contactus1">CONTACT US</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<section class="py-5">
+				<div class="container">
+			<div class='console-container'>
+								<strong><span>Best </span><span id='text'></span></strong>
+								<div class='console-underscore' id='console'>&#95;</div>
+								</div>
+								<script>
+									// function([string1, string2],target id,[color1,color2])    
+									consoleText(['Quality', 'Service', 'Rate'], 'text',['tomato','rebeccapurple','#2196F3']);
+
+									function consoleText(words, id, colors) {
+										if (colors === undefined) colors = ['#fff'];
+										var visible = true;
+										var con = document.getElementById('console');
+										var letterCount = 1;
+										var x = 1;
+										var waiting = false;
+										var target = document.getElementById(id)
+										target.setAttribute('style', 'color:' + colors[0])
+										window.setInterval(function() {
+
+											if (letterCount === 0 && waiting === false) {
+												waiting = true;
+												target.innerHTML = words[0].substring(0, letterCount)
+												window.setTimeout(function() {
+													var usedColor = colors.shift();
+													colors.push(usedColor);
+													var usedWord = words.shift();
+													words.push(usedWord);
+													x = 1;
+													target.setAttribute('style', 'color:' + colors[0])
+													letterCount += x;
+													waiting = false;
+												}, 1000)
+											} else if (letterCount === words[0].length + 1 && waiting === false) {
+												waiting = true;
+												window.setTimeout(function() {
+													x = -1;
+													letterCount += x;
+													waiting = false;
+												}, 1000)
+											} else if (waiting === false) {
+												target.innerHTML = words[0].substring(0, letterCount)
+												letterCount += x;
+											}
+										}, 120)
+										window.setInterval(function() {
+											if (visible === true) {
+												con.className = 'console-underscore hidden'
+												visible = false;
+
+											} else {
+												con.className = 'console-underscore'
+
+												visible = true;
+											}
+										}, 300)
+									}
+								</script>
+		</div>
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+			<div class="carousel-inner" role="listbox">
+				<div class="carousel-item active" style="background-image: url('image/banner0.png')">
+				</div>
+				<!-- Slide One - Set the background image for this slide in the line below -->
+				<div class="carousel-item" style="background-image: url('image/1.jpg')">
+			</div>
+			<!-- Slide Two - Set the background image for this slide in the line below -->
+			<div class="carousel-item" style="background-image: url('image/2.jpg')">
+			</div>
+			<!-- Slide Three - Set the background image for this slide in the line below -->
+			<div class="carousel-item" style="background-image: url('image/banner3.jpg')"> 				
+			</div>
+
+		</div>
+		<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+</section>
+<!-- Page Content -->
+<section class="py-3" id="aboutus">
+	<div class="container">
+	<h2 class="display-6 text-center"><b>WELCOME TO <br> <a style="color:#e0172a; font-size: 32px;">BEST CHASMA GHAR</a></b></h2>
+	<br>
+	<div class="row" style="font-family: inherit; margin: auto; padding-left: 14px; padding-right: 14px;">
+		<p class="lead">We are the only leading eyewear boutique based out of Palanpur, where you get only pre-eminent and customized frames suitable for your personality. Being a pioneer opticians for 28  years, we serve you with the best of innovations and style with the brands across the world.We are also providing facilities like precise eye check-up by auto refractometer, Spectacle number check-up by lensometer and accurate lens fitting by Auto Edger. All these machines are of premium quality and imported from Japan.</p>
+	</div>
+	<div class="row" style="margin: auto; font-family: inherit; padding-left: 14px; padding-right: 14px;">
+		<p class="lead">The showroom showcasing the niche eye-wear collection is located in prime area of Palanpur for your ease of access. When you visit our showroom, you’ll feel the hint of highest professionalism, a sense of superior peerless products and customer delight for our services.</p>
+	</div>
+
+</div>
+</section>
+
+<section class="products"  id="product">
+	<div class="container">
+		<div class="row">
+			<div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<h1 class="section-heading h1 pt-0 text-center"><b>PRODUCTS</b></h1>
+				<hr style="border-top: 4px solid #e0172a; width: 160px;"><br>
+			</div>
+
+			<div class="text-center" style="margin: 0 auto; align-items: center; font-family: inherit;">
+				
+				<button class="btn btn-default filter-button" data-filter="Spectacles">Spectacles</button>
+				<button class="btn btn-default filter-button" data-filter="Spectacles">Sunglasses</button>
+				<button class="btn btn-default filter-button" data-filter="Contactlenses">Contact lenses</button>
+			</div>
+		</div>
+<div class="row">
+			<div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 col-4 filter Spectacles">
+				<img src="image/police.jpg" class="img-responsive">
+			</div>
+
+			<div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 col-4 filter Spectacles">
+				<img src="image/rayban.jpg" class="img-responsive">
+			</div>
+
+			<div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 col-4 filter Spectacles">
+				<img src="image/fila.png" class="img-responsive">
+			</div>
+
+			<div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 col-4 filter Spectacles">
+				<img src="image/focus.jpg" class="img-responsive">
+			</div>
+
+			<div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 col-4 filter Spectacles">
+				<img src="image/Fastrack.png" class="img-responsive">
+			</div>
+
+			<div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 col-4 filter Spectacles">
+				<img src="image/titan.png" class="img-responsive">
+			</div>
+
+			<div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 col-4 filter Spectacles">
+				<img src="image/scott.png" class="img-responsive">
+			</div>
+
+			<div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 col-4 filter Spectacles">
+				<img src="image/idee.jpg" class="img-responsive">
+			</div>
+
+			<div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 col-4 filter Spectacles">
+				<img src="image/Image.jpg" class="img-responsive">
+			</div>
+
+			<div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 col-4 filter Spectacles">
+				<img src="image/velocity.jpg" class="img-responsive">
+			</div>
+			<div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 col-4 filter Spectacles">
+				<img src="image/louis.jpg" class="img-responsive">
+			</div>
+			<div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 col-4 filter Spectacles">
+				<img src="image/irus.jpg" class="img-responsive">
+			</div>
+			<div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 col-4 filter Contactlenses">
+				<img src="image/AcuveVita.jpg" class="img-responsive">
+			</div>
+
+			<div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 col-4 filter Contactlenses">
+				<img src="image/Aryan.jpg" class="img-responsive">
+			</div>
+			<div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 col-4 filter Contactlenses">
+				<img src="image/bausch-logo.png" class="img-responsive">
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+<section  id="gallery" style="padding-top: 20px; margin: 10px; padding-bottom: 20px;">
+	<div class="container">
+		<h1 class="section-heading h1 pt-0 text-center"><b>GALLERY</b></h1>
+		<hr style="border-top: 4px solid #e0172a; width: 160px;">
+		<br>
+		<div class="row" style="margin-top: 10px;">
+
+			<a href="shop/2.jpeg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4" style="padding-bottom: 10px;">
+				<img src="shop/2.jpeg" class="img-fluid rounded">
+			</a>
+			<a href="shop/3.jpeg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4" style="padding-bottom: 10px;">
+				<img src="shop/3.jpeg" class="img-fluid rounded">
+			</a>
+			<a href="shop/4.jpeg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4" style="padding-bottom: 10px;">
+				<img src="shop/4.jpeg" class="img-fluid rounded">
+			</a>
+			<a href="shop/5.jpeg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4" style="padding-bottom: 10px;">
+				<img src="shop/5.jpeg" class="img-fluid rounded">
+			</a>
+			<a href="shop/6.jpeg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4" style="padding-bottom: 10px;">
+				<img src="shop/6.jpg" class="img-fluid rounded" >
+			</a>
+			<a href="shop/7.jpeg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4" style="padding-bottom: 10px;">
+				<img src="shop/7.jpg" class="img-fluid rounded">
+			</a>
+		</div>
+	</div>
+</section>
+
+
+<section class="contactus" style="background-color: #dee2e6;" id="contactus1">
+	<!--Section heading-->
+	<div class="container">
+		<h1 class="section-heading h1 pt-0 text-center"><b>CONTACT US</b></h1>
+		
+		<hr style="border-top: 4px solid #e0172a; width: 160px;">
+		<br>
+		<div class="row" style="font-family: inherit;">
+
+			<!--Grid column-->
+			<div class="col-md-2 col-lg-8">
+
+				<!--Google map-->
+				
+				<div id="map-container-google-11" class="z-depth-1-half map-container-6" style="height: 400px">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.0207789077945!2d72.43269730001577!3d24.17100403430702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395ce93fee6cb9fb%3A0x26766d5a8b41dc38!2sBest%20chasma%20ghar!5e0!3m2!1sen!2sin!4v1608368774431!5m2!1sen!2sin" width="600" height="550" frameborder="0" allowfullscreen="" aria-hidden="false"></iframe>
+					</div>
+
+				</div>
+
+				<div class="col-md-2 col-lg-3  text-center" style="padding-top: 20px; margin: 0 auto;">
+					<a class="btn-floating blue accent-1"><i class="fa fa-map-marker" style="font-size:50px;color:#2196F3"></i></a>
+					<p style="font-size: 17px;">Hariom Market, Gurunank Chowk, Palanpur, Dist.B.K.Gujarat</p>
+					<hr style="border-top: 1px solid black; width: 70%;">
+					<a class="btn-floating blue accent-1"><i class="fa fa-phone" style="font-size:50px;color:#2196F3"></i></a>
+					<p style="font-size: 17px;">Rajubhai Joshi: +91 9016938740<br>Hiren Joshi: +91 8200662351</p>
+					<hr style="border-top: 1px solid black; width: 70%;">
+					<a class="btn-floating blue accent-1"><i class="fa fa-envelope" style="font-size:50px;color:#2196F3"></i></a>
+					<p style="font-size: 17px;">bestchasmaghar2020@gmail.com</p>
+				</div>
+				<!--Grid column-->
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer-section">
+		<div class="footer-top">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-md-4 col-lg-4 footer-about wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+						<img class="logo-footer" src="image/logo.png" alt="logo-footer" data-at2x="image/logo.png" width="200" height="230">
+						<p class="text-white" style="font-size: 16px; font-family: inherit;">Mon - Sat, 9 AM to 9 PM<br>Sunday, 9 AM to 6 PM</p>
+					</div>
+					<div class="col-md-4 col-lg-4 footer-contact wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+						<br><br>	
+						<h3 class="text-white">Contact</h3>
+						<hr class="new">
+						<p class="text-white"><i class="fa fa-map-marker" style="font-size:20px;color:#2196F3"></i> Hariom Market, Gurunank Chowk, Palanpur, Dist.B.K.Gujarat</p>
+						<p class="text-white"><i class="fa fa-phone" style="font-size:20px;color:#2196F3"></i>   Rajubhai Joshi: +91 9016938740</p>
+						<p class="text-white"><i class="fa fa-phone" style="font-size:20px;color:#2196F3"></i>   Hiren Joshi: +91 8200662351</p>
+						<p class="text-white"><i class="fa fa-envelope" style="font-size:20px;color:#2196F3"></i>  Email: bestchasmaghar2020@gmail.com</p>
+					</div>
+					<div class="col-md-4 col-lg-4 footer-social wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+						<br><br>
+						<h3 class="text-white">Follow us</h3>
+						<hr class="new">
+						<a href="https://m.facebook.com/profile.php?id=100060601923373" target="_blank" role="button" class="btn btn-social-icon btn-facebook btn-rounded"><i class="fa fa-facebook"></i></a>  
+<!-- 						<button type="button" class="btn btn-social-icon btn-twitter btn-rounded"><i class="fa fa-twitter"></i></button> 
+						<button type="button" class="btn btn-social-icon btn-linkedin btn-rounded"><i class="fa fa-linkedin"></i></button>  -->
+						<a href="https://www.instagram.com/bestchasmaghar/" target="_blank" role="button" class="btn btn-social-icon btn-instagram btn-rounded"><i class="fa fa-instagram"></i></a>  
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr class="new1">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 footer-copyright">
+					<p class="text-white text-center">Copyright © 2020
+						<a href="">Best Chasma Ghar.</a>All Rights Reserved</p>
+					</div>
+
+				</div>
+			</div>
+		</footer>
+	</body>
+	</html>
